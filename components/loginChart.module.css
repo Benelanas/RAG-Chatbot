@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Login Chart Container */
+.loginChartContainer {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+  font-family: "Inter", sans-serif;
+}
+
+.loginChartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.loginChartTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.loginChartSubtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.loginChartDropdown {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background: white;
+  color: #1e293b;
+  font-size: 0.875rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.loginChartDropdown:focus {
+  border-color: #6366f1;
+}
+
+/* Chart container */
+.loginChartContainer :global(.recharts-responsive-container) {
+  width: 100%;
+  height: 250px;
+}
+
+/* Login Chart Legend */
+.loginChartLegend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.loginChartLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.loginChartLegendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.loginChartLegendDot.successful {
+  background: #10b981;
+}
+
+.loginChartLegendDot.failed {
+  background: #ef4444;
+}
+
+.loginChartLegendDot.pending {
+  background: #f59e0b;
+}
+
+/* Login Stats */
+.loginStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.loginStat {
+  text-align: center;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.loginStatValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.loginStatLabel {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .loginChartContainer {
+    padding: 1.25rem;
+  }
+  
+  .loginChartHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .loginStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

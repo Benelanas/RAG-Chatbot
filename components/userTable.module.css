@@ -1,0 +1,538 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.userTableContainer {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  font-family: "Inter", sans-serif;
+}
+
+/* Top Navigation Tabs */
+.tableTabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 2rem;
+}
+
+
+
+
+
+
+.tableActions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchBtn {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 100px;
+  justify-content: center;
+}
+
+.searchBtn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+.searchBtn svg {
+  width: 18px;
+  height: 18px;
+  fill: #6b7280;
+  transition: fill 0.2s ease;
+}
+
+.searchBtn:hover svg {
+  fill: #374151;
+}
+
+.actionBtn {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 90px;
+  text-align: center;
+}
+
+.actionBtn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+.addUserBtn {
+  background: #6366f1;
+  border: none;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+  min-width: 120px;
+  text-align: center;
+}
+
+.addUserBtn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Filter Bar */
+.filterBar {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  min-width: 160px;
+}
+
+.filterIcon {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.filterSelect {
+  background: transparent;
+  border: none;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.filterSelect option {
+  background: #ffffff;
+  color: #374151;
+  padding: 0.5rem;
+}
+
+/* Table Styling */
+.tableWrapper {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  color: #374151;
+}
+
+.userTable th {
+  background: #f9fafb;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.userTable td {
+  padding: 1rem 1.5rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.userTable tr {
+  transition: background-color 0.2s ease;
+}
+
+.userTable tr:hover {
+  background-color: #f9fafb;
+}
+
+.userTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* Header Icons */
+.headerIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  vertical-align: middle;
+}
+
+.headerIcon svg {
+  width: 20px;
+  height: 20px;
+  fill: #6b7280;
+  transition: fill 0.2s ease;
+  flex-shrink: 0;
+}
+
+.headerIcon:hover svg {
+  fill: #374151;
+}
+
+/* Popup Styles */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  min-width: 400px;
+  max-width: 500px;
+}
+
+.popup h3 {
+  margin: 0 0 1.5rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.selectRole {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  background: white;
+  color: #374151;
+}
+
+.selectRole:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.popupActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.popupActions .actionBtn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #d1d5db;
+}
+
+.popupActions .actionBtn:first-child {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
+}
+
+.popupActions .actionBtn:first-child:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+}
+
+/* Delete button styling in popup */
+.popupActions .actionBtn:first-child.deleteBtn {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+.popupActions .actionBtn:first-child.deleteBtn:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.popupActions .actionBtn:last-child {
+  background: #f9fafb;
+  color: #374151;
+}
+
+.popupActions .actionBtn:last-child:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* User Cell */
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.userName {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* Email */
+.email {
+  color: #6b7280;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Role */
+.role {
+  color: #374151;
+  font-weight: 500;
+}
+
+
+
+/* Joined Date */
+.joinedDate {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* 2F Auth */
+.twoFA {
+  text-align: center;
+}
+
+.twoFAEnabled {
+  background: #10b981;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.twoFADisabled {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editBtn, .deleteBtn {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.editBtn:hover {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: white;
+}
+
+.editBtn:hover svg {
+  fill: white;
+}
+
+.deleteBtn:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: white;
+}
+
+.deleteBtn:hover svg {
+  fill: white;
+}
+
+/* Pagination Footer */
+.paginationFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.paginationLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.rowsSelect {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.paginationRight {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.paginationBtn {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 36px;
+}
+
+.paginationBtn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  color: #374151;
+}
+
+.activePage {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: white;
+}
+
+.paginationDots {
+  color: #6b7280;
+  padding: 0 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .userTable th,
+  .userTable td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .userTable .actions {
+    width: 120px;
+  }
+  
+  .userTable .actionBtn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+  }
+  
+  
+  
+  .tableActions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.25rem;
+  }
+  
+  .searchBtn,
+  .actionBtn,
+  .addUserBtn {
+    min-width: auto;
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+ 
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filterGroup {
+    min-width: auto;
+    width: 100%;
+  }
+}

@@ -1,0 +1,41 @@
+.chatContainer {
+    display: flex;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+
+.assistant {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.messageContent {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.user .messageContent {
+    background-color: #007bff;
+    color: black;
+    border-bottom-right-radius: 4px;
+}
+
+.assistant .messageContent {
+    background-color: grey;
+    border-bottom-left-radius: 4px;
+    margin-right: auto;
+}
+
+
